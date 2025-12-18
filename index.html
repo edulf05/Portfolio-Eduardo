@@ -3,148 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfólio de Eduardo — desenvolvedor web. Projetos, habilidades e contato." />
-  <title>Eduardo • Portfólio</title>
-
+  <meta name="description" content="Portfólio de Eduardo Lahn — desenvolvedor web." />
+  <title>Eduardo Lahn • Portfólio</title>
   <meta name="theme-color" content="#0f172a" />
-  <link rel="stylesheet" href="iStyle.css">
-  <script src="iScript.js" defer></script>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="reveal">
-      <div class="brand">
+  <div class="app-wrap">
+    <header class="site-header">
+      <div class="brand-inline">
         <div class="logo" aria-hidden="true">E</div>
-        <div>
-          <div style="font-weight:800">Eduardo</div>
-          <div class="small">Desenvolvedor Web</div>
+        <div class="brand-text">
+          <div class="name">Eduardo Lahn Fernandes</div>
+          <div class="handle">Desenvolvedor Full Stack</div>
         </div>
       </div>
 
-      <nav aria-label="Navegação principal">
-        <div class="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#contato">Contato</a>
-        </div>
-        <button class="menu-btn" aria-label="Abrir menu" id="menuBtn">☰</button>
-        <button class="btn" id="themeToggle" aria-pressed="false">Tema</button>
+      <nav class="top-nav" aria-label="Navegação principal">
+        <button class="nav-btn" data-target="home" title="Home" aria-label="Home">🏠</button>
+        <button class="nav-btn" data-target="projetos" title="Projetos" aria-label="Projetos">💼</button>
+        <button class="nav-btn" data-target="tecnologias" title="Tecnologias" aria-label="Tecnologias">🛠️</button>
+        <button class="nav-btn" data-target="sobre" title="Sobre" aria-label="Sobre">👤</button>
+        <button class="nav-btn" data-target="contato" title="Contato" aria-label="Contato">✉️</button>
       </nav>
     </header>
 
-    <main>
-      <section class="hero reveal">
-        <div class="card intro">
-          <h1>Crio experiências digitais elegantes e eficientes</h1>
-          <p>Sou desenvolvedor front-end com foco em performance, acessibilidade e interfaces responsivas para todas as telas.</p>
-          <div class="cta">
-            <a class="btn" href="#projetos">Ver projetos</a>
-            <a class="btn" href="#contato">Entrar em contato</a>
+    <main id="app">
+      <section id="home" class="section hero reveal">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1>Eduardo Lahn Fernandes</h1>
+            <p class="lead">Desenvolvedor Full Stack — crio aplicações web modernas e responsivas.</p>
           </div>
-          <div style="margin-top:16px" class="small">Disponível para projetos e contratações remotas.</div>
-        </div>
-
-        <aside class="card hero-visual">
-          <div class="stat-grid">
-            <div class="stat"><b>20+</b><span class="small">Projetos</span></div>
-            <div class="stat"><b>5</b><span class="small">Anos</span></div>
-            <div class="stat"><b>85%</b><span class="small">Performance média</span></div>
-          </div>
-          <div style="margin-top:auto; font-size:13px; color:var(--muted)">
-            Técnicas: HTML semântico, CSS moderno, JavaScript Vanilla, PWAs e otimizações de carregamento.
-          </div>
-        </aside>
-      </section>
-
-      <section id="sobre" class="reveal card" style="margin-bottom:18px">
-        <div class="section-title">
-          <h2 style="margin:0">Sobre</h2>
-          <div class="small">Resumo rápido</div>
-        </div>
-        <div style="display:grid; grid-template-columns: 1fr 280px; gap:18px;">
-          <div>
-            <p class="small" style="margin-bottom:8px">
-              Trabalho com front-end e aplicações web escaláveis. Tenho experiência em criar interfaces acessíveis e otimizadas para dispositivos móveis, TVs e desktops.
-            </p>
-            <div class="skills" aria-label="Habilidades">
-              <span class="skill">HTML</span>
-              <span class="skill">CSS</span>
-              <span class="skill">JavaScript</span>
-              <span class="skill">React</span>
-              <span class="skill">Next.js</span>
-              <span class="skill">Performance</span>
-            </div>
-          </div>
-          <div>
-            <div class="card small" style="background:var(--glass); padding:12px">Localização<br><strong>Brasil</strong></div>
-            <div class="card small" style="margin-top:10px; background:var(--glass); padding:12px">Disponibilidade<br><strong>Freelance/Tempo Integral</strong></div>
+          <div class="hero-photo">
+            <img src="assets/images/fotoedu.jpeg" alt="Foto de Eduardo" />
           </div>
         </div>
       </section>
 
-      <section id="projetos" class="reveal">
-        <div class="section-title">
-          <h2 style="margin:0">Projetos</h2>
-          <div class="small">Seleção recente</div>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <article class="project" aria-labelledby="p1">
-            <div class="thumb" role="img" aria-label="Imagem do projeto 1" style="background-image: linear-gradient(135deg,#06b6d4, #7c3aed);"></div>
-            <h3 id="p1">Dashboard Analítico</h3>
-            <p>Interface performant para visualização de dados em tempo real com interação responsiva.</p>
-            <div style="margin-top:auto; display:flex; gap:8px; align-items:center;">
-              <a class="btn" href="#" aria-label="Ver projeto Dashboard">Demo</a>
-              <a class="small" href="#" aria-label="Código do projeto Dashboard">Código</a>
-            </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="project" aria-labelledby="p2">
-            <div class="thumb" role="img" aria-label="Imagem do projeto 2" style="background-image: linear-gradient(135deg,#f97316, #ef4444);"></div>
-            <h3 id="p2">Landing Otimizada</h3>
-            <p>Landing page com foco em SEO, carregamento rápido e excelente performance em mobile.</p>
-            <div style="margin-top:auto; display:flex; gap:8px; align-items:center;">
-              <a class="btn" href="#" aria-label="Ver projeto Landing">Demo</a>
-              <a class="small" href="#" aria-label="Código do projeto Landing">Código</a>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project" aria-labelledby="p3">
-            <div class="thumb" role="img" aria-label="Imagem do projeto 3" style="background-image: linear-gradient(135deg,#60a5fa, #8b5cf6);"></div>
-            <h3 id="p3">PWA de Tarefas</h3>
-            <p>Aplicação offline-first com sincronização e notificações push.</p>
-            <div style="margin-top:auto; display:flex; gap:8px; align-items:center;">
-              <a class="btn" href="#" aria-label="Ver projeto PWA">Demo</a>
-              <a class="small" href="#" aria-label="Código do projeto PWA">Código</a>
-            </div>
-          </article>
-        </div>
+      <section id="projetos" class="section projetos reveal">
+        <h2>Projetos</h2>
+        <div id="projects-list" class="grid"></div>
       </section>
 
-      <section id="contato" class="reveal card" style="margin-top:18px">
-        <div class="section-title">
-          <h2 style="margin:0">Contato</h2>
-          <div class="small">Vamos conversar</div>
-        </div>
+      <section id="tecnologias" class="section tecnologias reveal">
+        <h2>Tecnologias</h2>
+        <div id="tech-list" class="tech-grid"></div>
+      </section>
 
-        <form class="contact-form" action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
-          <input type="text" name="nome" placeholder="Nome" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
-          <div style="display:flex; gap:10px; align-items:center; justify-content:space-between;">
-            <div class="small">Ou envie um email para seuemail@exemplo.com</div>
-            <button class="btn" type="submit">Enviar</button>
+      <section id="sobre" class="section sobre reveal">
+        <h2>Sobre mim</h2>
+        <div class="sobre-inner">
+          <img class="sobre-photo" src="assets/images/fotoedu.jpeg" alt="Foto de Eduardo" />
+          <div class="sobre-text">
+            <p>Sou desenvolvedor Full Stack com foco em experiências web acessíveis e performáticas. Trabalho com front-end moderno, APIs e soluções com Node.js, e gosto de automatizar fluxos e aprender novas ferramentas.</p>
+            <p>Disponível para projetos, colaborações e oportunidades.</p>
           </div>
-        </form>
+        </div>
       </section>
 
-      <footer class="reveal">
-        © <span id="year"></span> Eduardo — Feito com atenção à performance e acessibilidade.
-      </footer>
+      <section id="contato" class="section contato reveal">
+        <h2>Contato</h2>
+        <div class="contato-inner">
+          <div class="contact-card">
+            <p><strong>Email:</strong> <a href="mailto:eduardo@example.com">eduardo@example.com</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5511999999999">+55 11 99999-9999</a></p>
+            <p><strong>Redes:</strong></p>
+            <div class="socials">
+              <a href="https://github.com/edulf05" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/edulf05" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://twitter.com/edulf05" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">© <span id="year"></span> Eduardo Lahn — portfólio.</footer>
   </div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+/* Reset minimal */
+:root{
+  --bg:#0f172a;
+  --card:#0b1220;
+  --muted:#9aa6c0;
+  --accent:#7c3aed;
+  --glass: rgba(255,255,255,0.03);
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#081026 0%, #071226 100%);}
+.app-wrap{max-width:var(--max-width);margin:0 auto;padding:18px;}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+.brand-inline{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#061023}
+.brand-text .name{font-weight:700}
+.brand-text .handle{font-size:0.85rem;color:var(--muted)}
+.top-nav{display:flex;gap:8px}
+.nav-btn{background:transparent;border:1px solid transparent;padding:8px;border-radius:8px;color:var(--muted);cursor:pointer;font-size:1.05rem}
+.nav-btn:hover, .nav-btn.active{background:var(--glass);border-color:rgba(255,255,255,0.04);color:#fff}
+
+/* Sections */
+.section{padding:48px 12px;margin:18px 0;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.hero-inner{display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.hero-text h1{margin:0;font-size:clamp(1.6rem,3.6vw,2.6rem)}
+.lead{color:var(--muted);margin-top:8px}
+.hero-photo img{width:160px;height:160px;border-radius:12px;object-fit:cover;border:3px solid rgba(255,255,255,0.03)}
+
+/* Grid for projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+.card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.card h3{margin:0 0 6px 0}
+.card p{margin:0;color:var(--muted);font-size:0.95rem}
+.card .links{margin-top:10px;display:flex;gap:8px}
+
+/* Tech grid */
+.tech-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.tech-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:8px}
+.tech-item img{width:28px;height:28px;object-fit:contain}
+
+/* Sobre */
+.sobre-inner{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.sobre-photo{width:140px;height:140px;border-radius:10px;object-fit:cover}
+.sobre-text{color:var(--muted)}
+
+/* Contato */
+.contato-inner{display:flex;gap:18px;justify-content:flex-start}
+.contact-card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.socials a{margin-right:10px;color:var(--accent);text-decoration:none}
+
+/* Footer */
+.site-footer{text-align:center;color:var(--muted);padding:18px 0;font-size:0.9rem}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(18px);transition:all 600ms cubic-bezier(.2,.9,.2,1)}
+.reveal.show{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:700px){
+  .hero-inner{flex-direction:column-reverse;align-items:flex-start}
+  .hero-photo img{width:132px;height:132px}
+  .top-nav{gap:6px}
+}
