@@ -2,87 +2,97 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfólio de Eduardo Lahn — desenvolvedor web." />
-  <title>Eduardo Lahn • Portfólio</title>
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eduardo Lahn — Portfólio</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-  <div class="app-wrap">
-    <header class="site-header">
-      <div class="brand-inline">
-        <div class="logo" aria-hidden="true">E</div>
-        <div class="brand-text">
-          <div class="name">Eduardo Lahn Fernandes</div>
-          <div class="handle">Desenvolvedor Full Stack</div>
+  <header class="topbar">
+    <div class="brand">
+      <img src="../assets/images/fotoedu.jpeg" alt="Eduardo" class="brand-photo">
+      <div class="brand-text">
+        <div class="name">Eduardo Lahn Fernandes</div>
+        <div class="role">Desenvolvedor Full Stack</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-btn" data-target="home" title="Home">🏠</button>
+      <button class="nav-btn" data-target="projects" title="Projetos">💼</button>
+      <button class="nav-btn" data-target="tech" title="Tecnologias">🛠️</button>
+      <button class="nav-btn" data-target="about" title="Sobre">👤</button>
+      <button class="nav-btn" data-target="contact" title="Contato">✉️</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="section hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>Olá — eu sou <span class="accent">Eduardo Lahn</span></h1>
+          <p class="lead">Desenvolvedor Full Stack — construo aplicações web modernas, responsivas e acessíveis.</p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn">Ver projetos</a>
+            <a href="#contact" class="btn ghost">Contato</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img src="../assets/images/fotoedu.jpeg" alt="Foto Eduardo" class="hero-photo">
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="section-head">
+        <h2>Projetos</h2>
+        <div class="filters" id="project-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="api">API</button>
         </div>
       </div>
 
-      <nav class="top-nav" aria-label="Navegação principal">
-        <button class="nav-btn" data-target="home" title="Home" aria-label="Home">🏠</button>
-        <button class="nav-btn" data-target="projetos" title="Projetos" aria-label="Projetos">💼</button>
-        <button class="nav-btn" data-target="tecnologias" title="Tecnologias" aria-label="Tecnologias">🛠️</button>
-        <button class="nav-btn" data-target="sobre" title="Sobre" aria-label="Sobre">👤</button>
-        <button class="nav-btn" data-target="contato" title="Contato" aria-label="Contato">✉️</button>
-      </nav>
-    </header>
+      <div id="projects-grid" class="projects-grid">
+        <!-- projetos injetados aqui -->
+      </div>
+    </section>
 
-    <main id="app">
-      <section id="home" class="section hero reveal">
-        <div class="hero-inner">
-          <div class="hero-text">
-            <h1>Eduardo Lahn Fernandes</h1>
-            <p class="lead">Desenvolvedor Full Stack — crio aplicações web modernas e responsivas.</p>
-          </div>
-          <div class="hero-photo">
-            <img src="assets/images/fotoedu.jpeg" alt="Foto de Eduardo" />
-          </div>
+    <section id="tech" class="section tech">
+      <h2>Tecnologias</h2>
+      <div id="tech-grid" class="tech-grid">
+        <!-- tecnologias injetadas aqui -->
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>Sobre mim</h2>
+      <div class="about-grid">
+        <img src="../assets/images/fotoedu.jpeg" alt="Eduardo" class="about-photo">
+        <div class="about-text">
+          <p>Sou desenvolvedor Full Stack com foco em entregar interfaces performáticas e back-ends escaláveis. Trabalho com JavaScript/TypeScript, Node, React, bancos relacionais e não-relacionais. Gosto de automatizar processos, aprender novas ferramentas e colaborar em times ágeis.</p>
+          <p>Disponível para projetos e contratações. Vamos conversar?</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="projetos" class="section projetos reveal">
-        <h2>Projetos</h2>
-        <div id="projects-list" class="grid"></div>
-      </section>
-
-      <section id="tecnologias" class="section tecnologias reveal">
-        <h2>Tecnologias</h2>
-        <div id="tech-list" class="tech-grid"></div>
-      </section>
-
-      <section id="sobre" class="section sobre reveal">
-        <h2>Sobre mim</h2>
-        <div class="sobre-inner">
-          <img class="sobre-photo" src="assets/images/fotoedu.jpeg" alt="Foto de Eduardo" />
-          <div class="sobre-text">
-            <p>Sou desenvolvedor Full Stack com foco em experiências web acessíveis e performáticas. Trabalho com front-end moderno, APIs e soluções com Node.js, e gosto de automatizar fluxos e aprender novas ferramentas.</p>
-            <p>Disponível para projetos, colaborações e oportunidades.</p>
-          </div>
+    <section id="contact" class="section contact">
+      <h2>Contato</h2>
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href="mailto:eduardo@example.com" id="contact-email">eduardo@example.com</a></p>
+        <p><strong>Telefone:</strong> <a href="tel:+5511999999999" id="contact-phone">+55 11 99999-9999</a></p>
+        <div class="socials" id="contact-socials">
+          <!-- redes injetadas -->
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section id="contato" class="section contato reveal">
-        <h2>Contato</h2>
-        <div class="contato-inner">
-          <div class="contact-card">
-            <p><strong>Email:</strong> <a href="mailto:eduardo@example.com">eduardo@example.com</a></p>
-            <p><strong>Telefone:</strong> <a href="tel:+5511999999999">+55 11 99999-9999</a></p>
-            <p><strong>Redes:</strong></p>
-            <div class="socials">
-              <a href="https://github.com/edulf05" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/edulf05" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://twitter.com/edulf05" target="_blank" rel="noopener noreferrer">Twitter</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  <footer class="footer">
+    <small>© <span id="year"></span> Eduardo Lahn — Desenvolvedor Full Stack</small>
+  </footer>
 
-    <footer class="site-footer">© <span id="year"></span> Eduardo Lahn — portfólio.</footer>
-  </div>
-
-  <script src="js/data.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/app.js" defer></script>
 </body>
 </html>

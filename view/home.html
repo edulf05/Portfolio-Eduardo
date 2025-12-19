@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eduardo Lahn — Portfólio</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <button class="nav-btn" data-target="home" title="Home"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+<g fill="#FFFFFF" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2.09961l-11,9.90039h3v9h7v-6h2v6h7v-9h3zM12,4.79102l6,5.40039v0.80859v8h-3v-6h-6v6h-3v-8.80859z"></path></g></g>
+</svg></button>
+      <button class="nav-btn" data-target="projects" title="Projetos">💼</button>
+      <button class="nav-btn" data-target="tech" title="Tecnologias">🛠️</button>
+      <button class="nav-btn" data-target="about" title="Sobre">👤</button>
+      <button class="nav-btn" data-target="contact" title="Contato">✉️</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="section hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>Olá — eu sou <span class="accent">Eduardo Lahn</span></h1>
+          <p class="lead">Desenvolvedor Full Stack — construo aplicações web modernas, responsivas e acessíveis.</p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn">Ver projetos</a>
+            <a href="#contact" class="btn ghost">Contato</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img src="../assets/images/fotoedu.jpeg" alt="Foto Eduardo" class="hero-photo">
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="section-head">
+        <h2>Projetos</h2>
+        <div class="filters" id="project-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="api">API</button>
+        </div>
+      </div>
+
+      <div id="projects-grid" class="projects-grid">
+        <!-- projetos injetados aqui -->
+      </div>
+    </section>
+
+    <section id="tech" class="section tech">
+      <h2>Tecnologias</h2>
+      <div id="tech-grid" class="tech-grid">
+        <!-- tecnologias injetadas aqui -->
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>Sobre mim</h2>
+      <div class="about-grid">
+        <img src="../assets/images/fotoedu.jpeg" alt="Eduardo" class="about-photo">
+        <div class="about-text">
+          <p>Sou desenvolvedor Full Stack com foco em entregar interfaces performáticas e back-ends escaláveis. Trabalho com JavaScript/TypeScript, Node, React, bancos relacionais e não-relacionais. Gosto de automatizar processos, aprender novas ferramentas e colaborar em times ágeis.</p>
+          <p>Disponível para projetos e contratações. Vamos conversar?</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contato</h2>
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href="mailto:eduardo@example.com" id="contact-email">eduardo@example.com</a></p>
+        <p><strong>Telefone:</strong> <a href="tel:+5511999999999" id="contact-phone">+55 11 99999-9999</a></p>
+        <div class="socials" id="contact-socials">
+          <!-- redes injetadas -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Eduardo Lahn — Desenvolvedor Full Stack</small>
+  </footer>
+
+  <script src="../js/data.js" defer></script>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>
