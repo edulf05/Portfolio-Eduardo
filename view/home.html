@@ -7,15 +7,20 @@
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+  <!-- vídeo de fundo -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../assets/thumbs/fundo.mp4" type="video/mp4">
+  </video>
+
   <header class="topbar">
     <nav class="nav">
       <button class="nav-btn" data-target="home" title="Home"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
 <g fill="#FFFFFF" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2.09961l-11,9.90039h3v9h7v-6h2v6h7v-9h3zM12,4.79102l6,5.40039v0.80859v8h-3v-6h-6v6h-3v-8.80859z"></path></g></g>
 </svg></button>
-      <button class="nav-btn" data-target="projects" title="Projetos">💼</button>
-      <button class="nav-btn" data-target="tech" title="Tecnologias">🛠️</button>
-      <button class="nav-btn" data-target="about" title="Sobre">👤</button>
-      <button class="nav-btn" data-target="contact" title="Contato">✉️</button>
+      <button class="nav-btn" data-target="projects" title="Projetos">Projetos</button>
+      <button class="nav-btn" data-target="tech" title="Tecnologias">Tecnologias</button>
+      <button class="nav-btn" data-target="about" title="Sobre">Sobre</button>
+      <button class="nav-btn" data-target="contact" title="Contato">Contato</button>
     </nav>
   </header>
 
@@ -23,7 +28,7 @@
     <section id="home" class="section hero">
       <div class="hero-grid">
         <div class="hero-copy">
-          <h1>Olá — eu sou <span class="accent">Eduardo Lahn</span></h1>
+          <h1><span class="accent">Eduardo Lahn</span></h1>
           <p class="lead">Desenvolvedor Full Stack — construo aplicações web modernas, responsivas e acessíveis.</p>
           <div class="hero-ctas">
             <a href="#projects" class="btn">Ver projetos</a>
@@ -31,7 +36,7 @@
           </div>
         </div>
         <div class="hero-photo-wrap">
-          <img src="../assets/images/fotoedu.jpeg" alt="Foto Eduardo" class="hero-photo">
+          <img src="../assets/images/fotoedu.png" alt="Foto Eduardo" class="hero-photo">
         </div>
       </div>
     </section>
