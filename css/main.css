@@ -54,7 +54,7 @@ html,body{
 .brand-text .role{font-size:0.85rem;color:var(--muted)}
 .nav{
   display:flex;
-  gap:8px;
+  gap:85px; /* Espaçamento entre os itens do nav/topbar*/
 
   /* tirar o nav do fluxo e centralizá‑lo no contêiner */
   position: absolute;
