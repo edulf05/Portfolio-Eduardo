@@ -1,4 +1,3 @@
-const coon = require("../config/knex");
 const Projeto = require("../models/projetoModel");
 
 
