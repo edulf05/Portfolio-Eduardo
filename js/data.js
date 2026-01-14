@@ -8,8 +8,8 @@ window.TECHS = [
 ];
 
 window.CONTACT = {
-  email: "eduardo@example.com",
-  phone: "+5511999999999",
+  email: "eduardolf6753@gmail.com",
+  phone: "(51) 99291-1724",
   socials: [
     { name: "GitHub", url: "https://github.com/edulf05" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/edulf05" }
