@@ -1,20 +1,3 @@
-window.AppData = {
-  owner: {
-    name: 'Eduardo Lahn',
-    handle: '@edulf05',
-    photo: 'assets/images/fotoedu.jpeg',
-    bio: 'Desenvolvedor front-end focado em performance, acessibilidade e interfaces responsivas. Disponível para projetos e contratações remotas.'
-  },
-  
-  contacts: {
-    email: 'seuemail@exemplo.com',
-    whatsapp: '+5511999999999',
-    instagram: 'https://instagram.com/edulf05',
-    youtube: 'https://youtube.com/channel/XXXXX',
-    github: 'https://github.com/edulf05'
-  }
-}
-  
 const projetos = document.getElementById('projects');
 
 const API_PROJECTS = 'http://localhost:3000/projeto'; // endpoint do backend
@@ -156,6 +139,7 @@ function normalizeRow(row) {
   const desc = row.descricao || row.descrip || '';
   const categoria = row.categoria || row.categoria || '';
   const tags = categoria ? [String(categoria).toLowerCase()] : [];
+  const criador = row.criador || null;
 
   // thumb: se vier vazio usa padrão relativo a view/home.html
   let thumb = row.thumb || row.imagem || row.foto || '';
@@ -176,6 +160,7 @@ function normalizeRow(row) {
     desc,
     tags,
     thumb,
+    criador: row.criador || null,
     data_inicio: row.data_inicio || null,
     data_fim: row.data_fim || null
   };
@@ -194,6 +179,7 @@ function renderProjects(list) {
     card.innerHTML = `
       <img class="project-thumb" loading="lazy" src="${p.thumb}" alt="${p.title}">
       <h3>${p.title}</h3>
+      <p class="project-creator">${p.criador ? p.criador : '—'}</p>
       <p class="muted">${p.desc || ''}</p>
       <div class="project-meta">
         <div class="project-tags">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
