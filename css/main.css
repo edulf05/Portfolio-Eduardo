@@ -8,13 +8,41 @@
   --radius:12px;
   --gap:18px;
 }
+.accent {
+  font-size: 65px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--accent);
+}
+
+/* O título principal fica branco */
+h1 {
+  color: #ffffff; 
+  font-size: 65px; /* Tamanho base para o nome */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre os símbolos e o nome */
+}
+
+/* Apenas os símbolos recebem a cor e a fonte Avantgarde */
+.symbol {
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  color: var(--accent);
+  font-weight: bold;
+  /* Opcional: aumentar um pouco o tamanho do símbolo se ele parecer pequeno */
+  font-size: 1.1em; 
+}
 *{box-sizing:border-box}
 html,body{
   height:100%;
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;
 }
-.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+.container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
 
 /* vídeo de fundo cobrindo toda a tela, atrás do conteúdo */
 #bg-video{
@@ -40,7 +68,7 @@ html,body{
   top:20px;                 /* distância do topo */
   left:50%;                 /* centraliza horizontalmente */
   transform:translateX(-50%);
-  width: min(calc(100% - 230px), var(--max-width)); /* "mais curto" nas laterais */
+  width: min(calc(100% - 450px), var(--max-width)); /* "mais curto" nas laterais */
   border-radius:34px;       /* bordas arredondadas */
   background:linear-gradient(90deg, rgba(2,6,23,0.72), rgba(2,6,23,0.5));
   backdrop-filter: blur(8px);
@@ -116,46 +144,99 @@ html,body{
   box-shadow: 0 0 0 3px rgba(143, 246, 59, 0.12);
 }
 
-/* Sections */
+/* garante que seções não sejam sobrepostas e que projetos fiquem dentro da div */
 .section{
-  margin:var(--gap) 0;
-  padding:90px;
-  border-radius:var(--radius);
-  background: transparent; /* sem cor de fundo */
-  box-shadow:0 8px 30px rgba(2,6,23,0.6);
+  position: relative;
+  z-index: 2; /* acima do vídeo de fundo */
+  padding-top: 24px;
+  padding-bottom: 28px;
+}
 
-  /* cada section ocupa a tela inteira */
-  min-height:100vh;
-  /* garante que o conteúdo não fique escondido pelo topbar fixo ao navegar */
-  scroll-margin-top:120px;
-  display:block;
+/* Projects: evitar overlap com hero, ajustes de espaçamento */
+.section.projects{
+  margin-top: 6px;
+  padding-top: 28px;
+}
+
+/* Criamos um "wrapper" interno para o conteúdo não ficar colado nas bordas da tela */
+.hero-grid, 
+.section-head, 
+.projects-grid, 
+.tech-grid, 
+.about-grid, 
+.contact-card {
+  width: 100%;
+  max-width: var(--max-width); /* Aqui voltamos a usar os 1100px para o conteúdo */
+  margin: 0 auto;              /* Centraliza o bloco de conteúdo */
 }
 .section h2{margin:0 0 12px 0}
 
 /* Hero: ocupar toda a tela e centralizar conteúdo */
 .section.hero {
-  min-height: 100vh;           /* ocupa a viewport inteira */
+  min-height: 100vh;
+  align-items: flex-start; /* Alinha ao topo */
+  padding-top: 140px;      /* Espaço para a topbar */
+}
+
+/* Garante que o container do título respeite o limite de 1100px e centralize */
+.section-head {
   display: flex;
-  align-items: center;         /* centra verticalmente */
-  padding-top: 120px;          /* espaço para topbar fixa */
-  padding-bottom: 120px;
-  scroll-margin-top: 120px;
-}
-
-/* garante grid responsivo dentro do hero */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 32px;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto 24px auto; /* Centraliza e dá margem inferior padrão */
 }
 
-.lead{margin-top:10px;color:var(--muted)}
-.hero-copy h1{font-size:clamp(1.6rem,3.5vw,2.6rem);margin:0}
+/* Remove margens padrão dos h2 dentro dessas divs para não quebrar o alinhamento flex */
+.section-head h2 {
+  margin: 0;
+}
 
-.hero-photo{width:100%;height:500px;object-fit:cover;}
-.hero-photo-wrap{display:flex;align-items:center;justify-content:center}
-/* photo glow - aplicado atrás das imagens */
+/* Hero: alinhar texto + imagem e subir levemente juntos */
+.hero-grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  /* desloca o bloco inteiro um pouco para cima sem quebrar o flow */
+  transform: translateY(-12px);
+  transition: transform .28s ease;
+  z-index: 2;
+}
+/* texto da hero ocupa o espaço restante */
+.hero-copy{
+  flex: 1 1 360px;
+  min-width: 260px;
+}
+
+.hero-copy h1 {
+  /* Aumentamos um pouco, mas com limite para não quebrar em 3 linhas */
+  font-size: clamp(2rem, 4vw, 3.8rem); 
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1.3rem;
+  max-width: 850px; /* Permite que o texto se alongue mais na horizontal */
+  margin-top: 20px;
+}
+/* foto da hero: tamanho controlado e alinhada com o texto */
+.hero-photo-wrap{
+  flex: 0 0 240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-left: 8px;
+}
+.hero-photo{
+  max-width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.45);
+}
 .hero-photo-wrap,
 .about-photo-wrap{
   position:relative;
@@ -189,6 +270,16 @@ html,body{
   mix-blend-mode:screen;
 }
 
+.hero-ctas {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-ctas .btn {
+  padding: 14px 28px; /* Botões mais robustos */
+  font-size: 1.1rem;
+}
+
 /* Buttons */
 .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#2dd4bf);color:#061023;text-decoration:none;font-weight:600;margin-top:12px}
 .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:#fff}
@@ -206,49 +297,51 @@ html,body{
   line-height: 1.2;
 }
 
-.projects-grid{
+/* Aplique isso para todos os grids de conteúdo */
+.projects-grid, .tech-grid, .about-grid, .contact-card, .section-head {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto; /* Centraliza o bloco na tela */
+}
+
+/* Pequeno ajuste no About para não ficar gigante */
+.about-grid {
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+/* Ajustes para caber 4 cards por linha e reduzir tamanho dos cards */
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr)); /* 3 colunas no desktop */
-  gap:12px;
-  margin-top:12px;
-  align-items:start;
-  min-height:120px;
-  width:100%;
+  grid-template-columns: repeat(4, minmax(140px, 1fr)); /* 4 colunas */
+  gap: 10px; /* menos espaço entre colunas/linhas */
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
 }
-/* Ajusta o card para preencher coluna e ter altura consistente */
+/* cards menores */
 .project-card{
-  background: rgba(6,10,20,0.55);
-  padding:10px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.04);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #e6eef8;
-  transition: transform .25s ease, box-shadow .25s ease, opacity .4s ease;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  height:100%;              /* faz o card preencher a altura da célula */
-  box-sizing:border-box;
+  padding: 8px;
+  border-radius:10px;
+  gap:8px;
+  font-size: 0.92rem;
 }
 
-/* Fonte específica apenas para a descrição dos projetos */
-.project-card .muted {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 0.95rem;
-  font-weight: 400;
-  margin-top: 6px;
-  line-height: 1.35;
-}
+.project-creator { font-size: 0.8rem; }
+.project-card .muted { font-size: 0.86rem; line-height:1.25; }
 
-/* Thumb: ocupa largura total e mantém proporção */
+/* thumbs menores e com altura fixa */
 .project-thumb{
   width:100%;
-  height:160px;
-  object-fit:cover;         /* crop suave para cards com proporção uniforme */
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  height:120px;
+  object-fit:cover;
   border-radius:8px;
-  border:1px solid rgba(255,255,255,0.03);
+}
 
+/* ajustar títulos e metadados para caber melhor */
+.project-card h3{
+  font-size: 1rem;
+  margin: 6px 0 4px;
 }
 
 /* Meta e tags */
@@ -395,23 +488,38 @@ html,body{
   .section{ padding:40px; min-height: calc(100vh - 40px); scroll-margin-top:72px; }
 }
 
-/* responsivo: 2 colunas em telas médias */
-@media (max-width: 900px) {
-  .projects-grid{
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    gap: 10px; /* reduzido */
-  }
-  .project-thumb{ height:150px; }
+/* responsivo: 3 colunas em telas médias-largas */
+@media (max-width: 1200px) {
+  .projects-grid { grid-template-columns: repeat(3, minmax(140px, 1fr)); gap:10px; }
 }
 
-/* responsivo: 1 coluna em telas pequenas (celular) */
+/* responsivo: 2 colunas em tablets */
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: repeat(2, minmax(160px, 1fr)); gap:10px; }
+  .project-thumb{ height:140px; }
+}
+
+/* responsivo: 1 coluna em celular */
 @media (max-width: 520px) {
-  .projects-grid{
-    grid-template-columns: 1fr;
-    gap: 8px; /* reduzido */
-  }
-  .project-card{ padding:12px; }
+  .projects-grid { grid-template-columns: 1fr; gap:8px; }
+  .project-card{ padding:10px; }
   .project-thumb{ height:180px; object-fit:cover; }
+}
+
+/* responsivo: reduz o translate da hero para telas pequenas */
+@media (max-width: 900px){
+  .hero-grid{ transform: translateY(-8px); gap:16px; }
+  .hero-photo-wrap{ flex:0 0 200px; }
+}
+@media (max-width: 520px){
+  .hero-grid{
+    transform: translateY(-4px);
+    flex-direction: column-reverse; /* foto abaixo do texto em mobile */
+    align-items: center;
+    gap:12px;
+  }
+  .hero-photo-wrap{ flex: 0 0 auto; padding-left:0; }
+  .hero-copy{ text-align:center; }
 }
 
 /* animações */
