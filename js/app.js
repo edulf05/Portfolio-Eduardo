@@ -176,15 +176,32 @@ function renderProjects(list) {
   }
   list.forEach(p => {
     const card = el('article', 'project-card reveal');
+    card.dataset.id = p.id;
     card.innerHTML = `
       <img class="project-thumb" loading="lazy" src="${p.thumb}" alt="${p.title}">
-      <h3>${p.title}</h3>
-      <p class="project-creator">${p.criador ? p.criador : '—'}</p>
-      <p class="muted">${p.desc || ''}</p>
-      <div class="project-meta">
-        <div class="project-tags">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-        <div class="project-dates">${p.data_inicio ? p.data_inicio : ''} ${p.data_fim ? '— ' + p.data_fim : ''}</div>
+      <div class="project-body">
+        <h3>${p.title}</h3>
+        <p class="project-creator">${p.criador ? p.criador : '—'}</p>
+        <p class="muted">${p.desc || ''}</p>
+        <div class="project-meta">
+          <div class="project-tags">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+          <div class="project-dates">${p.data_inicio ? p.data_inicio : ''} ${p.data_fim ? '— ' + p.data_fim : ''}</div>
+        </div>
       </div>`;
+
+    // hover pre-select visual
+    card.addEventListener('mouseenter', () => card.classList.add('preselect'));
+    card.addEventListener('mouseleave', () => card.classList.remove('preselect'));
+
+    // click → abrir página de detalhe
+    card.addEventListener('click', (e) => {
+      // evita cliques em botões internos se houver
+      const id = card.dataset.id;
+      if (!id) return;
+      // navegar para view/projects.html (mesma pasta view)
+      window.location.href = `projects.html?id=${encodeURIComponent(id)}`;
+    });
+
     grid.appendChild(card);
   });
 }

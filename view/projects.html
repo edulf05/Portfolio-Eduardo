@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projeto — Detalhes</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    /* ajustes locais para a página de detalhe */
+    .detail-wrap{ max-width:1100px; margin:56px auto;padding:24px; }
+    .back-fixed{ position:fixed; left:18px; top:18px; z-index:2200; }
+    .project-detail{ display:grid; grid-template-columns: 1fr 380px; gap:18px; align-items:start; }
+    .detail-media{ width:100%; border-radius:12px; overflow:hidden; background:#061023; }
+    .detail-meta h1{ margin:0 0 6px 0; font-size:1.8rem; }
+    .detail-meta .muted{ margin-top:8px; }
+    @media (max-width:900px){ .project-detail{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <a href="home.html" class="btn back-fixed" title="Voltar">← Voltar</a>
+
+  <main class="container">
+    <section class="section">
+      <div class="detail-wrap">
+        <div id="project-detail" class="project-detail">
+          <!-- media e meta injetados via JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/project-detail.js" defer></script>
+</body>
+</html>
